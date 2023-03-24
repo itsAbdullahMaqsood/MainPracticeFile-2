@@ -8,8 +8,8 @@ int main()
 
     cout << "input your inputt: ";
     cin.getline(input, 100);
-
     //hello world
+    // hello
 
 
     fstream myfile("filetest.txt", ios::app);
