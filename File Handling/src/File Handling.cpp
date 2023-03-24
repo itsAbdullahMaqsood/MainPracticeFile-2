@@ -9,7 +9,6 @@ int main()
     cin.getline(input, 100);
 
     fstream myfile("filetest.txt", ios::app);
-    //myfile.open("filetest.txt");
     myfile <<endl<< input;
     myfile.close();
 
