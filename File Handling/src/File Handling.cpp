@@ -7,7 +7,6 @@ int main()
     char input[200];
     cout << "input your inputtttt: ";
     cin.getline(input, 100);
-    //hello
     fstream myfile("filetest.txt", ios::app);
     myfile << input;
     myfile.close();
