@@ -5,11 +5,11 @@ using namespace std;
 int main()
 {
     char input[200];
-    cout << "input";
+    cout << "input into it: ";
     cin.getline(input, 100);
 
     fstream myfile("filetest.txt", ios::app);
-    myfile <<endl<< input;
+    myfile << input;
     myfile.close();
 
 
