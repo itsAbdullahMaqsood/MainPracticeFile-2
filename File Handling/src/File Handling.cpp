@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-    char input[100];
+    char input[200];
     cout << "input";
     cin.getline(input, 100);
 
