@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     char input[200];
-    cout << "input your inputt: ";
+    cout << "input your inputtttt: ";
     cin.getline(input, 100);
 
     fstream myfile("filetest.txt", ios::app);
