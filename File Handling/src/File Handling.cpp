@@ -9,7 +9,7 @@ int main()
     cout << "input your inputt: ";
     cin.getline(input, 100);
     //hello
-
+    // man
     fstream myfile("filetest.txt", ios::app);
     myfile << input;
     myfile.close();
