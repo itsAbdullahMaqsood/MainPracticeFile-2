@@ -128,7 +128,7 @@ int main(){
     //Blankspace();
     WordCount();
     //TheCount();
-    //check();
+    
 
     return 0;
 }
