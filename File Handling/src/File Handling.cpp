@@ -26,21 +26,49 @@ void Blankspace() {         //counts the no. of white spaces in the file
 
 void WordCount() {              //counts the number of total words in the file
     int count = 1;
-    fstream fileforwordcount("Out.txt", ios::out);
+    string filename;
+    ofstream fileforwordcount;
+    bool correctname = true;
+    do{ 
+        
+        system("cls");
+        if (correctname == false) {
+            cout << "Error: Can't open the file named " << filename<< "\n\n";
+            
+        }
+        cout << "Please enter the input file name: ";
+        getline(cin, filename);
+        correctname = true;
+        string extcheck = "";
+        for (int i = 0; i < filename.length(); i++) {
+            if (filename[i] == '.') {
+                for(int j=i; j<filename.length(); j++){
+                    extcheck += filename[j];
+                }
+            }
+        }
+        if (extcheck != ".txt") {
+            filename += ".txt";
+        }
+        fileforwordcount.open (filename.c_str(), ios::_Noreplace);
+    
+        if (!fileforwordcount) {
+            correctname = false;
+        }
+    } while (correctname == false);
+    system("cls");
     string inputtextforwc;                                           //WC = Word Count
     cout << "input a sentence for WC: ";
     getline(cin, inputtextforwc);
     fileforwordcount << inputtextforwc;
     fileforwordcount.close();
     char readingtextforwc;
-    fstream readingforwc("Out.txt", ios::in);
+    fstream readingforwc(filename.c_str(), ios::in);
+    string words;
     while (!readingforwc.eof()) {
-        readingforwc.get(readingtextforwc);
-
-        if (readingtextforwc == ' ') {
+        if (readingforwc >> words) {
             count++;
         }
-
     }
     cout << "total words: " << count;
 }
@@ -76,13 +104,31 @@ void TheCount() {               // counts all the "the" from the file
     cout << "\nthe word count for the word \"the\" is: " << count << endl << endl << endl;
 }
     
+void check() {
+    ofstream fin;
+    fin.open("out.txt");
+    string check = "hi         my name is abdullah               ";
+    fin << check;
+    fin.close();
+    ifstream fo;
+    fo.open("out.txt");
+    char word[30];
+    int count = 0;
+    while (!fo.eof())
+    {
+        if(fo >> word)
+        count++;
+    }
+    cout << "Number of words in file are " << count;
+    fin.close();
+}
     
 
 int main(){
     //Blankspace();
-    //WordCount();
-    TheCount();
-   
+    WordCount();
+    //TheCount();
+    //check();
 
     return 0;
 }
