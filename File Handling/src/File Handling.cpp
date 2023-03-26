@@ -3,13 +3,10 @@
 #include <vector>
 #include <string>
 using namespace std;
-void Blankspace() {
+void Blankspace() {         //counts the no. of white spaces in the file
     char input[200];
     int count = 0;
-    cout << "input your inputt: ";
-
-
-
+    cout << "input your input: ";
     cin.getline(input, 100);
 
     fstream myfile("filetest.txt", ios::out);
@@ -27,7 +24,7 @@ void Blankspace() {
     cout << "blank: " << count;  
 }
 
-void WordCount() {
+void WordCount() {              //counts the number of total words in the file
     int count = 1;
     fstream fileforwordcount("Out.txt", ios::out);
     string inputtextforwc;                                           //WC = Word Count
@@ -48,7 +45,7 @@ void WordCount() {
     cout << "total words: " << count;
 }
 
-void TheCount() {
+void TheCount() {               // counts all the "the" from the file
     int count = 0;
     fstream Thecountwriting("Story.txt", ios::out);             //open file in writemode
     string Thecounttextwriting;
